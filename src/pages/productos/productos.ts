@@ -1,3 +1,5 @@
+import { ProductoServiceProvider } from './../../providers/producto-service/producto-service';
+import { Producto } from './../../shared/producto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  productos: Producto[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private productoServiceProvider: ProductoServiceProvider) {
+      this.productos = this.productoServiceProvider.getProductos();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductosPage');
+  }
+
+  itemSelected(producto: Producto) {
+    
   }
 
 }
