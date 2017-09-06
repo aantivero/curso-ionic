@@ -31,8 +31,10 @@ export class ProductosPage {
     console.log('ionViewDidLoad ProductosPage');
   }
 
-  itemSelected(producto: Producto) {
-    
+  itemSelected(id: number) {
+    this.productoServiceProvider.getProducto(id).subscribe(producto => {
+      console.log(producto);
+    });
   }
 
 }

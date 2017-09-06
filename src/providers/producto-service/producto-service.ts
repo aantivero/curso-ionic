@@ -16,12 +16,17 @@ export class ProductoServiceProvider {
   productoApiUrl: 'http://localhost:3000';
 
   constructor(private http: Http) {
-    console.log('Hello ProductoServiceProvider Provider');
   }
 
   getProductos(): Observable<Producto[]> {
     return this.http.get('http://localhost:3000/productos')
     .map(res => <Producto[]>res.json());
+  }
+
+  getProducto(id) {
+    console.log(id);
+    return this.http.get('http://localhost:3000/productos?id='+id).map(
+      res => <Producto>res.json());
   }
 
 }
