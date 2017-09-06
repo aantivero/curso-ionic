@@ -17,11 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductosPage {
 
-  productos: Producto[];
+  productos: Producto[];  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private productoServiceProvider: ProductoServiceProvider) {
-      this.productos = this.productoServiceProvider.getProductos();
+      this.productoServiceProvider.getProductos().subscribe(productos => {
+        this.productos = productos;
+      })
+  
   }
 
   ionViewDidLoad() {

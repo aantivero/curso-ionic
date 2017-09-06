@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductoServiceProvider } from '../providers/producto-service/producto-service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductoServiceProvider } from '../providers/producto-service/producto-
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

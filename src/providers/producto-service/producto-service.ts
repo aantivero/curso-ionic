@@ -2,6 +2,7 @@ import { Producto } from './../../shared/producto';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the ProductoServiceProvider provider.
@@ -12,15 +13,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductoServiceProvider {
 
-  productos: Producto[];
+  productoApiUrl: 'http://localhost:3000';
 
-  constructor() {
+  constructor(private http: Http) {
     console.log('Hello ProductoServiceProvider Provider');
   }
 
-  getProductos() {
-    this.productos = [new Producto('nombre', 'description', 123)];
-    return this.productos;
+  getProductos(): Observable<Producto[]> {
+    return this.http.get('http://localhost:3000/productos')
+    .map(res => <Producto[]>res.json());
   }
 
 }
