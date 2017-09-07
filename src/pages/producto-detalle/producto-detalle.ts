@@ -1,3 +1,4 @@
+import { ProductoServiceProvider } from './../../providers/producto-service/producto-service';
 import { Producto } from './../../shared/producto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -17,10 +18,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ProductoDetallePage {
 
   producto: Producto;
+  id: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private productoSP: ProductoServiceProvider) {
     console.log(this.navParams.get('id'));
-    this.producto = new Producto(1, 'algo', 'pp', 123);
+    this.id = this.navParams.get('id');
+    this.productoSP.getProducto(this.id);
+    
   }
 
   ionViewDidLoad() {
