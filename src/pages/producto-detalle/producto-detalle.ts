@@ -1,3 +1,4 @@
+import { Producto } from './../../shared/producto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,7 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductoDetallePage {
 
+  producto: Producto;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.producto = new Producto(1, 'algo', 'pp', 123);
   }
 
   ionViewDidLoad() {

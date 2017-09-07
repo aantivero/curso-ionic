@@ -1,3 +1,4 @@
+import { ProductoDetallePage } from './../pages/producto-detalle/producto-detalle';
 import { ProductosPage } from './../pages/productos/productos';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,8 @@ import { HttpModule } from '@angular/http';
     ContactPage,
     HomePage,
     TabsPage,
-    ProductosPage
+    ProductosPage,
+    ProductoDetallePage
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { HttpModule } from '@angular/http';
     HomePage,
     TabsPage,
     ProductosPage,
+    ProductoDetallePage
   ],
   providers: [
     StatusBar,

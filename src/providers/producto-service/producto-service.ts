@@ -23,7 +23,7 @@ export class ProductoServiceProvider {
     .map(res => <Producto[]>res.json());
   }
 
-  getProducto(id) {
+  getProducto(id: number): Observable<Producto> {
     console.log(id);
     return this.http.get('http://localhost:3000/productos?id='+id).map(
       res => <Producto>res.json());

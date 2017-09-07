@@ -7,14 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Detalle {{producto.nombre}}</ion-title>
+    <ion-title>Detalle {{producto?.nombre}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<p>{{producto.nombre}}</p>
-<p>{{producto.descripcion}}</p>
-<p>{{producto.precio}}</p>
+ {{producto}} 
+<p>{{producto?.nombre}}</p>
+<p>{{producto?.descripcion}}</p>
+<p>{{producto?.precio}}</p>
 </ion-content>

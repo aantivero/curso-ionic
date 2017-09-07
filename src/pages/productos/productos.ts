@@ -1,3 +1,4 @@
+import { ProductoDetallePage } from './../producto-detalle/producto-detalle';
 import { ProductoServiceProvider } from './../../providers/producto-service/producto-service';
 import { Producto } from './../../shared/producto';
 import { Component } from '@angular/core';
@@ -32,9 +33,7 @@ export class ProductosPage {
   }
 
   itemSelected(id: number) {
-    this.productoServiceProvider.getProducto(id).subscribe(producto => {
-      console.log(producto);
-    });
+    this.navCtrl.push(ProductoDetallePage);
   }
 
 }
