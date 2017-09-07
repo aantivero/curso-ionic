@@ -19,6 +19,7 @@ export class ProductoDetallePage {
   producto: Producto;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.navParams.get('id'));
     this.producto = new Producto(1, 'algo', 'pp', 123);
   }
 

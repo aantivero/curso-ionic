@@ -33,7 +33,8 @@ export class ProductosPage {
   }
 
   itemSelected(id: number) {
-    this.navCtrl.push(ProductoDetallePage);
+    console.log(id);
+    this.navCtrl.push(ProductoDetallePage, {id});
   }
 
 }
